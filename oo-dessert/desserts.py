@@ -37,15 +37,16 @@ class Cupcake:
             print("sorry , these cupcakes are sold out")
         if self.qty<0:
             self.qty=0
-
+    @staticmethod
     def scale_recipe(ingredients,amount):
-        @staticmethod
-        for i_name, qty in ingredients:
-            return [(i_name,qty*amount)]
+        
+        x =list((ingredient, qty * amount)
+            for ingredient, qty in ingredients)
+        return x
             
-    
+    @classmethod
     def get(cls,name):
-        @classmethod
+       
         if name in cache:
             return cls.cache[name]
         else:
